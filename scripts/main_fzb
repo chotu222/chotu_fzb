@@ -1,0 +1,15 @@
+#!bin/bash
+
+clear
+echo "WELCOME TO GRAND FLASHABLE ZIP BUILDER"                   
+echo "------------------------------------------------------------------------"
+echo
+echo
+echo Are your files present in fzb folder,just to confirm!
+chotu-linux/enter_key
+echo
+echo Alright,generating META-INF...
+clear
+echo
+echo
+echo Do you want to make changes the updater script befor creating a flashable zip?

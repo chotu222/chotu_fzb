@@ -2,6 +2,7 @@
 
 version=1.2
 
+chmod 755 scripts/*
  echo
 echo "============================================================"
   echo " Chotu's fzb $version - by chotu222"
@@ -25,9 +26,9 @@ chotu-linux/check_multiple_working
 if [ "$?" != "1" ]
   then
 case $opt in
-      1) clear; chotu-linux/main_fzb; continue;;
-      2) chotu-linux/clean_fzb; continue;;
-      3) chotu-linux/update_fzb;;
+      1) clear; scripts/main_fzb; continue;;
+      2) scripts/clean_fzb; continue;;
+      3) scripts/update_fzb;;
       x) clear; echo; echo "See ya."; echo; exit 1;;
       *) echo "Invalid option"; continue;;
     esac
