@@ -1,4 +1,4 @@
-#!bin/bash
+
 
 clear
 echo "WELCOME TO GRAND FLASHABLE ZIP BUILDER"                   
@@ -6,10 +6,19 @@ echo "------------------------------------------------------------------------"
 echo
 echo
 echo Are your files present in fzb folder,just to confirm!
-chotu-linux/enter_key
 echo
-echo Alright,generating META-INF...
-clear
-echo
-echo
-echo Do you want to make changes the updater script befor creating a flashable zip?
+echo -n "if yes the press "y" key to continue else press "n" "
+read thru
+
+if[ "$thru" == y]
+
+then
+scripts/chotu_processor; continue;;
+
+elif[ "$thru" ==n]
+then
+echo "Alright, copy your files to fzb/system folder and visit again"
+clear; echo; echo "See ya."; echo; exit 1;;
+fi
+
+scripts/enter_key
