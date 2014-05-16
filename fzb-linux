@@ -1,0 +1,38 @@
+#!/bin/bash
+
+version=1.2
+
+ echo
+echo "============================================================"
+  echo " Chotu's fzb $version - by chotu222"
+  echo "============================================================"
+  echo
+echo "> MAIN MENU"
+  echo
+echo " 1 - Build flashable zip"
+  echo " 2 - Clean fzb and OUT folder ! CAUTION!"
+  echo " 3 - Check for updates !"
+  echo " x - Exit"
+  echo
+echo
+echo -n "Enter option: "
+  read opt
+
+  if [ "$opt" != "x" ] && [ "$opt" != "u" ] && [ "$opt" != "1" ]
+  then
+chotu-linux/check_multiple_working
+  fi
+if [ "$?" != "1" ]
+  then
+case $opt in
+      1) clear; chotu-linux/main_fzb; continue;;
+      2) chotu-linux/clean_fzb; continue;;
+      3) chotu-linux/update_fzb;;
+      x) clear; echo; echo "See ya."; echo; exit 1;;
+      *) echo "Invalid option"; continue;;
+    esac
+fi
+
+chotu-linux/enter_key
+
+done
