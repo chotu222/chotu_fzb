@@ -20,6 +20,7 @@ echo 		Welcome to Chotu's flashable zip builder
 echo                               -by chotu222,                                     
 echo ________________________________________________________________________________
 echo.
+echo   Add chotufzb folder in the root of any drive to work
 echo.
 echo.
 echo    1. Build flashable zip
