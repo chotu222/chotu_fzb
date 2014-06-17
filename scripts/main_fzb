@@ -5,7 +5,7 @@ echo "WELCOME TO GRAND FLASHABLE ZIP BUILDER"
 echo "------------------------------------------------------------------------"
 echo
 echo
-echo Are your files present in fzb folder,just to confirm!
+echo "Are your files present in fzb folder,just to confirm!"
 echo
 echo -n "if yes the press "y" key to continue else press "n" "
 read thru
@@ -13,7 +13,7 @@ read thru
 if[ "$thru" == y]
 
 then
-scripts/chotu_processor; continue;;
+dowork
 
 elif[ "$thru" ==n]
 then
@@ -21,4 +21,7 @@ echo "Alright, copy your files to fzb/system folder and visit again"
 clear; echo; echo "See ya."; echo; exit 1;;
 fi
 
+dowork {
+
+}
 scripts/enter_key
