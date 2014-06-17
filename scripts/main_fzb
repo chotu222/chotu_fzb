@@ -11,13 +11,13 @@ echo
 echo -n "if yes the press "y" key to continue else press "n" "
 read thru
 
-if[ "$thru" == y]
+if[ "$thru" == y ]
 
 then
 dowork
 
-elif[ "$thru" ==n]
-then
+elif[ "$thru" == n ]
+  then
 echo "Alright, copy your files to fzb/system folder and visit again"
 clear; echo; echo "See ya."; echo; exit 1;;
 fi
@@ -31,5 +31,11 @@ dowork {
    cd chotu-linux
    cp -R MERA-INF ../fzb/MERA-INF
    cp -R chotu ../fzb/chotu
+echo "Do you want to make changes the updater script befor creating a flashable zip?"
+echo -n "answer= (yes=y no=n) : "   
+read answer
+
+if[ "$answer" == y ]
+
 }
 scripts/enter_key
