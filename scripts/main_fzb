@@ -1,5 +1,6 @@
 
-
+mkdir fzb
+mkdir fzb/system
 clear
 echo "WELCOME TO GRAND FLASHABLE ZIP BUILDER"                   
 echo "------------------------------------------------------------------------"
@@ -22,6 +23,13 @@ clear; echo; echo "See ya."; echo; exit 1;;
 fi
 
 dowork {
-
+   cd ..
+   cd fzb
+   mkdir MERA-INF
+   mkdir chotu
+   cd ..
+   cd chotu-linux
+   cp -R MERA-INF ../fzb/MERA-INF
+   cp -R chotu ../fzb/chotu
 }
 scripts/enter_key
