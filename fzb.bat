@@ -1,10 +1,10 @@
 :: 
-:: chotu222's Grand Tool
-:: File: chotutool.bat
-:: Galaxy grand modification tool
+:: chotu222's FZB Tool
+:: File: fzb.bat
+:: zip maker tool
 ::
 @echo off
-TITLE Grand Tool
+TITLE Flashable zip Maker Tool
 java -version
 chotu\adb version
 mode con:cols=80 lines=30
