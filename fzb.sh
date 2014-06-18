@@ -49,12 +49,12 @@ echo
 echo -n "if yes the press "y" key to continue else press "n" "
 read thru
 
-if[ "$thru" == y ]
+if[ "$thru" == "y" ]
 
 then
 dowork
 
-elif[ "$thru" == n ]
+elif[ "$thru" == "n" ]
   then
 echo "Alright, copy your files to fzb/system folder and visit again"
 clear; echo; echo "See ya."; echo; exit 1;;
@@ -73,7 +73,7 @@ echo "Do you want to make changes the updater script before creating a flashable
 echo -n "answer= (yes=y no=n) : "   
 read answer
 
-if[ "$answer" == y ]
+if[ "$answer" == "y" ]
   then
    open -t TextEdit ../fzb/MERA-INF/com/google/android/updater-script
 echo "After you are done editing updater-script press enter"
@@ -81,6 +81,7 @@ echo ""
 echo ""
 function pause(){
    read -p "$*"
+   noedit
 }
  
 # ...
@@ -91,7 +92,23 @@ else
 noedit
 
 noedit () {
+cd ../chotu-linux
+  7za a -tzip "../fzb/FLASH.zip" ../fzb/* -mx5
+  echo "Zipping....."
+echo "Done!"
+clear
+echo "Give a name to your flashable zip :"
+echo ""
+echo ""
+echo -n "Type the name of your zip here:"
+read $FZIP
 
+mv "../fzb/FLASH.zip" ../fzb/$FZIP.zip
+echo "rename done !"
+echo "......"
+echo "..."
+echo -n "do you want to sign zip ?"
+read $opt
 
 }
 
