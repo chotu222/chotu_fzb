@@ -3,6 +3,7 @@
 version=1.2
 
 chmod 755 scripts/*
+menu () {
  echo
 echo "============================================================"
   echo " Chotu's fzb $version - by chotu222"
@@ -33,7 +34,7 @@ case $opt in
       *) echo "Invalid option"; continue;;
     esac
 fi
-
+}
 main () {
   
   
@@ -91,6 +92,8 @@ pause 'Press [Enter] key to continue...'
 else
 noedit
 
+fi
+
 noedit () {
 cd ../chotu-linux
   7za a -tzip "../fzb/FLASH.zip" ../fzb/* -mx5
@@ -107,11 +110,28 @@ mv "../fzb/FLASH.zip" ../fzb/$FZIP.zip
 echo "rename done !"
 echo "......"
 echo "..."
-echo -n "do you want to sign zip ?"
+echo -n "do you want to sign zip ? y-yes, n-no"
 read $opt
 
+if [ "$opt"  == y ] 
+  then
+   signz
+  
+  else
+   movez
+fi
 }
 
+signz () {
+    cd ..
+   cd chotu-linux
+echo "signing zip.."
+java -Xmx1024m -jar signapk.jar -w testkey.x509.pem testkey.pk8 ../fzb/%FZIP%.zip "../OUT/%FZIP%_signed.zip"
+echo "Done"
+echo -p "Press enter key"
+menu
+
+}
 
 }
 
