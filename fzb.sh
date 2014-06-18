@@ -27,8 +27,8 @@ if [ "$?" != "1" ]
   then
 case $opt in
       1) main ;;
-      2) scripts/clean_fzb; continue;;
-      3) scripts/update_fzb;;
+      2) clean ;;
+      3) update ;;
       x) clear; echo; echo "See ya."; echo; exit 1;;
       *) echo "Invalid option"; continue;;
     esac
@@ -60,7 +60,7 @@ echo "Alright, copy your files to fzb/system folder and visit again"
 clear; echo; echo "See ya."; echo; exit 1;;
 fi
 
-dowork {
+dowork () {
    cd ..
    cd fzb
    mkdir MERA-INF
@@ -69,11 +69,32 @@ dowork {
    cd chotu-linux
    cp -R MERA-INF ../fzb/MERA-INF
    cp -R chotu ../fzb/chotu
-echo "Do you want to make changes the updater script befor creating a flashable zip?"
+echo "Do you want to make changes the updater script before creating a flashable zip?"
 echo -n "answer= (yes=y no=n) : "   
 read answer
 
 if[ "$answer" == y ]
+  then
+   open -t TextEdit ../fzb/MERA-INF/com/google/android/updater-script
+echo "After you are done editing updater-script press enter"
+echo ""
+echo ""
+function pause(){
+   read -p "$*"
+}
+ 
+# ...
+# call it
+pause 'Press [Enter] key to continue...'
+
+else
+noedit
+
+noedit () {
+
+
+}
+
 
 }
 
