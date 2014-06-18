@@ -1,1 +1,19 @@
 About flashable zip builder:
+
+Helps in creating a flashable zip of any kind. Either it is for bootanimation or any app that you want to update via cwm.
+
+Features
+-Generate META-INF fore core folder -Fixes permissions -makes a signed/unsigned flashable zip
+
+Requirements
+- JDK installed (optional) -this is used to sign zip
+
+- Notepad++ -used to edit updater-script
+
+How to use
+
+-Place your files in fzb/system folder
+
+eg : If you want to make a flashable zip for a font
+
+place your fonts in fzb/system/fonts and use the tool to create a flashabe zip
